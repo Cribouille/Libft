@@ -2,7 +2,10 @@
 
 int   main()
 {
-  char buffer[] = "coucou c'est encore moi!";
+  char buffer[] = "coucou c'est moi!";
+  char buffer1[] = "Hello";
+  char buffer2[] = " World!";
+  char buffer3[] = "Invasion";
 
   ft_putchar('a');
   ft_putchar('\n');
@@ -16,7 +19,23 @@ int   main()
   ft_putchar('\n');
   ft_putstr((char *)ft_memcpy(buffer, "helloo", 6));
   ft_putchar('\n');
-  ft_putstr((char *)ft_memccpy(buffer, "helloo", 101, 6));
+  ft_putstr((char *)ft_memccpy(buffer, "hehehe", 101, 6));
+  ft_putchar('\n');
+  ft_putstr((char *)ft_memmove(buffer, "coucou c'est encore moi!", 23));
+  ft_putchar('\n');
+  ft_putstr((char *)ft_memchr(buffer, 101, 15));
+  ft_putchar('\n');
+  ft_putnbr(ft_memcmp("est encore moa", "est encore moi", 14));
+  ft_putchar('\n');
+  ft_putnbr(ft_strlen("Hello"));
+  ft_putchar('\n');
+  ft_putstr(ft_strdup("Hello les amis!"));
+  ft_putchar('\n');
+  ft_putstr(ft_strcat(buffer1, buffer2));
+  ft_putchar('\n');
+  ft_putstr(ft_strncat(buffer2, buffer3, 3));
+  ft_putchar('\n');
+  ft_putstr(ft_strchr(buffer3, 97));
   ft_putchar('\n');
   return (0);
 }
