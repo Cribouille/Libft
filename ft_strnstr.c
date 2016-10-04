@@ -8,7 +8,7 @@ char   *ft_strnstr(const char *str, const char *substring, size_t len)
   i = 0;
   if (substring[0] == '\0')
     return ((char *)str);
-  while (i < len)
+  while (i < len && str[i])
   {
     j = 0;
     if (str[i + j] == substring[j])
