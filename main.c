@@ -48,5 +48,17 @@ int   main()
   ft_putchar('\n');
   ft_putnbr(ft_strncmp("bonjour", "bonjours", 5));
   ft_putchar('\n');
+  ft_putnbr(ft_isalpha(69));
+  ft_putchar('\n');
+  ft_putnbr(ft_isdigit(48));
+  ft_putchar('\n');
+  ft_putnbr(ft_isalnum(79));
+  ft_putchar('\n');
+  ft_putnbr(ft_isascii(126));
+  ft_putchar('\n');
+  ft_putchar(ft_toupper(97));
+  ft_putchar('\n');
+  ft_putchar(ft_tolower(69));
+  ft_putchar('\n');
   return (0);
 }
