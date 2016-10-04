@@ -24,5 +24,10 @@ char   *ft_strcat(char *dst, const char *src);
 char   *ft_strncat(char *dst, const char *src, size_t n);
 size_t ft_strlcat(char *dst, const char *src, size_t size);
 char   *ft_strchr(const char *s, int c);
+char   *ft_strrchr(const char *s, int c);
+char   *ft_strstr(const char *str, const char *substring);
+char   *ft_strnstr(const char *str, const char *substring, size_t len);
+int    ft_strcmp(const char *s1, const char *s2);
+int    ft_strncmp(const char *s1, const char *s2, size_t n);
 
 #endif

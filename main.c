@@ -6,6 +6,7 @@ int   main()
   char buffer1[] = "Hello";
   char buffer2[] = " World!";
   char buffer3[] = "Invasion";
+  char buffer4[] = "etienne";
 
   ft_putchar('a');
   ft_putchar('\n');
@@ -36,6 +37,16 @@ int   main()
   ft_putstr(ft_strncat(buffer2, buffer3, 3));
   ft_putchar('\n');
   ft_putstr(ft_strchr(buffer3, 97));
+  ft_putchar('\n');
+  ft_putstr(ft_strrchr(buffer4, 110));
+  ft_putchar('\n');
+  ft_putstr(ft_strstr("Les Etienne sont grand!", "sont"));
+  ft_putchar('\n');
+  ft_putstr(ft_strnstr("Les Etienne sont grand!", "en", 15));
+  ft_putchar('\n');
+  ft_putnbr(ft_strcmp("bonjour", "bonjours"));
+  ft_putchar('\n');
+  ft_putnbr(ft_strncmp("bonjour", "bonjours", 5));
   ft_putchar('\n');
   return (0);
 }
