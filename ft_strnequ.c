@@ -6,7 +6,7 @@ int ft_strnequ(char const *s1, char const *s2, size_t n)
 
   i = 0;
   if (!s1 || !s2)
-    return (NULL);
+    return (0);
   if (!n)
     return (1);
   if (ft_strncmp(s1, s2, n) == 0)
