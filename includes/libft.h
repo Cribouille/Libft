@@ -79,4 +79,5 @@ void   ft_arriteri(char **arr, void (*f)(unsigned int, char *));
 int    ft_arradd(char ***arr, char *str);
 void   ft_arrdel(char ***arr);
 char   **ft_arrdup(char **arr);
+char   *ft_itoa_base(int value, int base);
 #endif
