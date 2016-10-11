@@ -80,4 +80,6 @@ int    ft_arradd(char ***arr, char *str);
 void   ft_arrdel(char ***arr);
 char   **ft_arrdup(char **arr);
 char   *ft_itoa_base(int value, int base);
+void   *ft_lstfold(t_list *lst, void *(*f)(const void *, const void *));
+t_list *ft_strsplitlst(char *s, char c);
 #endif
