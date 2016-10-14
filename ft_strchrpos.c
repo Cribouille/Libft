@@ -1,3 +1,5 @@
+#include "./includes/libft.h"
+
 int ft_strchrpos(const char *s, int c)
 {
   int i;
