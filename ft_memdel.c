@@ -1,10 +1,22 @@
-#include "./includes/libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: efichot <efichot@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/05 12:43:06 by efichot           #+#    #+#             */
+/*   Updated: 2016/11/05 12:48:20 by efichot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void ft_memdel(void **ap)
+#include "libft.h"
+
+void	ft_memdel(void **ap)
 {
-  if (ap)
-  {
-    free(*ap);
-    *ap = NULL;  
-  }
+	if (ap)
+	{
+		free(*ap);
+		*ap = NULL;
+	}
 }

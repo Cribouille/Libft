@@ -1,21 +1,31 @@
-#include "./includes/libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_arrdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: efichot <efichot@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/09 12:08:28 by efichot           #+#    #+#             */
+/*   Updated: 2016/11/09 14:30:33 by efichot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char **ft_arrdup(char **arr)
+#include "libft.h"
+
+char	**ft_arrdup(char **arr)
 {
-  int size;
-  char **copy;
-  int i;
+	char	**new;
+	int		i;
 
-  size = ft_arrsize(arr);
-  copy = (char **)malloc(sizeof(*copy) * size + 1);
-  if (!copy)
-    return (NULL);
-  i = 0;
-  while (arr[i])
-  {
-    copy[i] = ft_strdup(arr[i]);
-    i++;
-  }
-  copy[i] = 0;
-  return (copy);
+	if (!arr)
+		return (NULL);
+	if (!(new = ft_arrnew((size_t)ft_arrsize(arr))))
+		return (NULL);
+	i = 0;
+	while (arr[i])
+	{
+		new[i] = ft_strdup(arr[i]);
+		i++;
+	}
+	return (new);
 }

@@ -1,11 +1,20 @@
-#include "./includes/libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: efichot <efichot@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/05 13:42:07 by efichot           #+#    #+#             */
+/*   Updated: 2016/11/05 13:44:46 by efichot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void ft_strclr(char *s)
+#include "libft.h"
+
+void	ft_strclr(char *s)
 {
-  int len;
-
-  if (!s)
-    return ;
-  len = ft_strlen(s);
-  ft_bzero(s, len);
+	if (!s)
+		return ;
+	ft_bzero(s, ft_strlen(s));
 }

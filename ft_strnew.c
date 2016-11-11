@@ -1,11 +1,22 @@
-#include "./includes/libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: efichot <efichot@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/05 13:25:36 by efichot           #+#    #+#             */
+/*   Updated: 2016/11/05 13:29:12 by efichot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char *ft_strnew(size_t size)
+#include "libft.h"
+
+char	*ft_strnew(size_t size)
 {
-  char *ret;
+	char	*ret;
 
-  ret = (char *)ft_memalloc(sizeof(*ret) * size + 1);
-  if (!ret)
-    return (NULL);
-  return (ret);
+	if (!(ret = (char *)ft_memalloc(sizeof(*ret) * size + 1)))
+		return (NULL);
+	return (ret);
 }

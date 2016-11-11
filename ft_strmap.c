@@ -1,21 +1,32 @@
-#include "./includes/libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: efichot <efichot@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/05 14:07:16 by efichot           #+#    #+#             */
+/*   Updated: 2016/11/05 14:17:19 by efichot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char *ft_strmap(char const *s, char (*f)(char))
+#include "libft.h"
+
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-  char *ret;
-  int i;
+	char	*ret;
+	int		i;
 
-  i = 0;
-  if (!s || !f)
-    return (NULL);
-  ret = (char *)malloc(sizeof(*ret) * ft_strlen(s) + 1);
-  if (!ret)
-    return (NULL);
-  while (s[i])
-  {
-    ret[i] = f(s[i]);
-    i++;
-  }
-  ret[i] = '\0';
-  return (ret);
+	if (!s || !f)
+		return (NULL);
+	i = 0;
+	if (!(ret = ft_strnew(ft_strlen(s))))
+		return (NULL);
+	while (s[i])
+	{
+		ret[i] = f(s[i]);
+		i++;
+	}
+	ret[i] = '\0';
+	return (ret);
 }

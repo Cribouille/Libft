@@ -1,7 +1,19 @@
-#include "./includes/libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: efichot <efichot@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/07 16:04:09 by efichot           #+#    #+#             */
+/*   Updated: 2016/11/07 16:10:25 by efichot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void ft_lstadd(t_list **alst, t_list *new)
+#include "libft.h"
+
+void	ft_lstadd(t_list **begin_list, t_list *new)
 {
-  new->next = *alst;
-  *alst = new;
+	new->next = *begin_list;
+	*begin_list = new;
 }

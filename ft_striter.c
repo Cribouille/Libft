@@ -1,16 +1,24 @@
-#include "./includes/libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: efichot <efichot@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/05 13:48:12 by efichot           #+#    #+#             */
+/*   Updated: 2016/11/05 13:54:34 by efichot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void ft_striter(char *s, void (*f)(char *))
+#include "libft.h"
+
+void	ft_striter(char *s, void (*f)(char *))
 {
-  int i;
+	int	i;
 
-  i = 0;
-  if (s && f)
-  {
-    while (s[i])
-    {
-      f(&s[i]);
-      i++;
-    }
-  }
+	i = 0;
+	if (!s || !f)
+		return ;
+	while (s[i])
+		f(&s[i++]);
 }

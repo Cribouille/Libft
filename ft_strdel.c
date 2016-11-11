@@ -1,10 +1,22 @@
-#include "./includes/libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: efichot <efichot@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/05 13:36:32 by efichot           #+#    #+#             */
+/*   Updated: 2016/11/05 13:39:39 by efichot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void ft_strdel(char **as)
+#include "libft.h"
+
+void	ft_strdel(char **as)
 {
-  if (as)
-  {
-    free(*as);
-    *as = NULL;
-  }
+	if (as)
+	{
+		free(*as);
+		*as = NULL;
+	}
 }

@@ -1,45 +1,43 @@
-#include "./includes/libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: efichot <efichot@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/07 10:43:20 by efichot           #+#    #+#             */
+/*   Updated: 2016/11/07 13:32:49 by efichot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_intlen(int nb)
+#include "libft.h"
+
+static	size_t	ft_intlen(int n)
 {
-  int count;
+	size_t			i;
 
-  count = 0;
-  if (nb < 0)
-    count++;
-  while (nb != 0)
-  {
-    count++;
-    nb = nb / 10;
-  }
-  return (count);
+	i = 1;
+	if (n < 0)
+		i++;
+	while (n /= 10)
+		i++;
+	return (i);
 }
 
-char *ft_itoa(int n)
+char			*ft_itoa(int n)
 {
-  unsigned int	tmp;
-  int				len;
-  char			*str;
-  int       i;
+	size_t			len;
+	char			*str;
+	unsigned int	u_nbr;
 
-  if (n == 0)
-    return ("0");
-  i = 0;
-  tmp = (n < 0) ? (n * -1) : n;
-  len = ft_intlen(n);
-  str = ft_strnew(len + 1);
-  if (str == NULL)
-    return (NULL);
-  str[len] = '\0';
-  if (n < 0)
-  {
-    str[0] = '-';
-    i = 1;
-  }
-  while (len-- > i)
-  {
-    str[len] = tmp % 10 + '0';
-    tmp = tmp / 10;
-  }
-  return (str);
+	len = ft_intlen(n);
+	u_nbr = (n < 0) ? -n : n;
+	if (!(str = ft_strnew(len)))
+		return (NULL);
+	str[--len] = u_nbr % 10 + '0';
+	while (u_nbr /= 10)
+		str[--len] = u_nbr % 10 + '0';
+	if (n < 0)
+		str[0] = '-';
+	return (str);
 }

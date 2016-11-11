@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_arrmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: efichot <efichot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 16:49:42 by efichot           #+#    #+#             */
-/*   Updated: 2016/11/11 15:55:33 by efichot          ###   ########.fr       */
+/*   Created: 2016/11/09 12:17:03 by efichot           #+#    #+#             */
+/*   Updated: 2016/11/09 14:30:58 by efichot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+char	**ft_arrmap(char **arr, char *(*f)(char *))
 {
-	unsigned int	i;
+	int		i;
+	char	**ret;
 
+	if (!arr || !f)
+		return (NULL);
+	ret = ft_arrnew((size_t)ft_arrsize(arr));
 	i = 0;
-	while ((s1[i] || s2[i]) && n--)
+	while (ret[i])
 	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		ret[i] = ft_strdup(f(arr[i]));
 		i++;
 	}
-	return (0);
+	return (ret);
 }

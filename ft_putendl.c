@@ -1,10 +1,22 @@
-#include "./includes/libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: efichot <efichot@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/07 13:53:26 by efichot           #+#    #+#             */
+/*   Updated: 2016/11/07 13:54:35 by efichot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void ft_putendl(char const *s)
+#include "libft.h"
+
+void	ft_putendl(char *str)
 {
-  if (s)
-  {
-    write(1, s, ft_strlen(s));
-    write(1, "\n", 1);
-  }
+	if (str)
+	{
+		write(1, str, ft_strlen(str));
+		write(1, "\n", 1);
+	}
 }
